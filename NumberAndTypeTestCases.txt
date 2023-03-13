@@ -1,0 +1,358 @@
+Test Case 01: Number with Trivia
+
+Request:
+End Point: http://numbersapi.com/20/trivia
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body: 20 is the number of questions in the popular party game Twenty Questions.
+
+Request:
+End Point: http://numbersapi.com/0/trivia
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:0 is the coldest possible temperature old the Kelvin scale.
+
+Request:
+End Point:http://numbersapi.com/-12/trivia
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body: -12 is an uninteresting number.
+
+Test Case 02: Number with Math
+Request:
+End Point:	http://numbersapi.com/-8/math
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body: -8 is a boring number.
+
+Request:
+End Point:http://numbersapi.com/0/math
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body: 0 is the additive identity.
+
+Request:
+End Point:http://numbersapi.com/35/math
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body: 35 is the sum of the first five triangular numbers, making it a tetrahedral number.
+
+Test Case 03: Number with DateOrYear
+
+Request:
+End Point:http://numbersapi.com/35/date
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body: February 4th is the day in 1974 that the Symbionese Liberation Army kidnaps Patty Hearst in Berkeley, California.
+
+Request:
+End Point:http://numbersapi.com/00/date
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:December 31st is the day in 1999 that Boris Yeltsin, the first president of Russia, resigns as President of Russia, leaving Prime Minister Vladimir Putin as the acting President.
+
+Request:
+End Point:http://numbersapi.com/-74/date
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:72 BC is the year that the Helvetii and other peoples under Ariovistus invade Gaul.
+
+Test Case 04: only type no number
+
+Request:
+End Point:http://numbersapi.com/date
+Method: GET
+
+Response:
+Status Code: 404
+Reponse Body:<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /date</pre>
+</body>
+</html>
+
+
+Request:
+End Point:http://numbersapi.com/trivia
+Method: GET
+
+Response:
+Status Code: 404
+Reponse Body:<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /trivia</pre>
+</body>
+</html>
+
+
+Request:
+End Point:http://numbersapi.com/math
+Method: GET
+
+Response:
+Status Code: 404
+Reponse Body:<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /math</pre>
+</body>
+</html>
+
+
+Test Case 05: only number no type
+Request:
+End Point:http://numbersapi.com/4
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:4 is the number of movements in a symphony.
+
+Request:
+End Point:4 is the number of movements in a symphony.
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:-40 is a boring number.
+
+Request:
+End Point:http://numbersapi.com/0
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:0 is the coldest possible temperature old the Kelvin scale.
+
+Test Case 06: invalid url
+Request:
+End Point:http://numbersapi.com//
+Method: GET
+
+Response:
+Status Code: 404
+Reponse Body:Invalid url
+
+Test Case 07: without number and type
+Request:
+End Point:http://numbersapi.com/
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:
+
+Test Case 08: Random with type
+Request:
+End Point:http://numbersapi.com/random/math
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:1908 is the number of self-dual planar graphs with 22 edges.
+
+Request:
+End Point:http://numbersapi.com/random/trivia
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:200 is the minimum number of varieties of watermelons grown in the U.S.
+
+Request:
+End Point:http://numbersapi.com/random/year
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:461 is the year that Olybrius becomes second candidate for the western throne.
+
+
+Request:
+End Point:http://numbersapi.com/random/dateoryear
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:ERROR: Invalid type.
+
+Request:
+End Point:http://numbersapi.com/random
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:1e+21 is the number of grains of sand on all the world's beaches put together.
+
+est Case 09: month/date with type
+Request:
+End Point:http://numbersapi.com/10/10/trivia
+Method: GET
+
+Response:
+Status Code: 404
+Reponse Body:<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /10/10/trivia</pre>
+</body>
+</html>
+
+
+Request:
+End Point:http://numbersapi.com/6/10/math
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /6/10/math</pre>
+</body>
+</html>
+
+
+Request:
+End Point:http://numbersapi.com/6/4/date
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:June 4th is the day in 1989 that the Tiananmen Square protests are violently ended in Beijing by the People's Liberation Army.
+
+est Case 10: month/date with number
+Request:
+End Point:http://numbersapi.com/6/10/10
+Method: GET
+
+Response:
+Status Code: 404
+Reponse Body:Invalid url
+
+Request:
+End Point:http://numbersapi.com/6/10/dateoryear
+Method: GET
+
+Response:
+Status Code: 404
+Reponse Body:<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /6/10/dateoryear</pre>
+</body>
+</html>
+est Case 11: only Month/Date
+
+Request:
+End Point:http://numbersapi.com/9/31
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:October 1st is the day in 1978 that the Voltaic Revolutionary Communist Party is founded.
+
+Request:
+End Point:http://numbersapi.com/123456732184
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:123456732184 is an uninteresting number.
+
+Request:
+End Point:http://numbersapi.com/1..5,10/trivia
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:{
+ "1": "1 is the number of Gods in monotheism.",
+ "2": "2 is the number of stars in a binary star system (a stellar system consisting of two stars orbiting around their center of mass).",
+ "3": "3 is the number of consecutive successful attempts in a hat trick in sports.",
+ "4": "4 is the number of bits in a nibble, equivalent to half a byte.",
+ "5": "5 is the number of kyu (pupil) grades in judo.",
+ "10": "10 is the highest score possible in Olympics gymnastics competitions."
+}
+
+Request:
+End Point:http://numbersapi.com/1..3/math
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:{
+ "1": "1 is the most common leading digit in many sets of data, a consequence of Benford's law.",
+ "2": "2 is many properties in mathematics.",
+ "3": "3 is a triangle is the only figure which, if all endpoints have hinges, will never change its shape unless the sides themselves are bent."
+}
+
+Request:
+End Point:http://numbersapi.com/1..4,9/date
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:{
+ "1": "January 1st is the day in 1911 that Northern Territory is separated from South Australia and transferred to Commonwealth control.",
+ "2": "January 2nd is the day in 2001 that Sila María Calderón becomes the first female Governor of Puerto Rico.",
+ "3": "January 3rd is the day in 1996 that the Motorola StarTAC, the first flip phone and one of the first mobile phones to gain widespread consumer adoption, goes on sale.",
+ "4": "January 4th is the day in 1974 that United States President Richard Nixon refuses to hand over materials subpoenaed by the Senate Watergate Committee.",
+ "9": "January 9th is the day in 475 that Byzantine Emperor Zeno is forced to flee his capital at Constantinople, and his general, Basiliscus gains control of the empire."
+}
+
+Request:
+End Point:http://numbersapi.com/1..2
+Method: GET
+
+Response:
+Status Code: 200
+Reponse Body:{
+ "1": "1 is the number of dimensions of a line.",
+ "2": "2 is the number of stars in a binary star system (a stellar system consisting of two stars orbiting around their center of mass)."
+}
+
